@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './demo/list.dart';
 import './demo/drawer.dart';
 import './demo/bottom_bar.dart';
+import 'demo/search.dart';
 
 // 入口文件
 // void 不返回值
@@ -36,7 +37,12 @@ class Home extends StatelessWidget {
               IconButton(
                   icon: Icon(Icons.search),
                   tooltip: 'Navigration',
-                  onPressed: () => debugPrint('search'))
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return SearchPage();
+                    }));
+                  })
             ],
             bottom: TabBar(tabs: <Widget>[
               Tab(icon: Icon(Icons.send)),

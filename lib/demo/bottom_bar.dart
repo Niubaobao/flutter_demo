@@ -28,7 +28,7 @@ class _BottomBarDemoState extends State<BottomBarDemo> {
             title: Text('explore'),
           ),
           BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('menu')),
-          BottomNavigationBarItem(icon: Icon(Icons.people), title: Text('my')),
+          BottomNavigationBarItem(icon: Icon(Icons.android), title: Text('my')),
         ]);
   }
 }
