@@ -9,6 +9,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   Future<void> _launched;
+  String _phone = '17630228063';
 
   Future<void> _launchInBrowser(String url) async {
     if (await canLaunch(url)) {
@@ -18,6 +19,14 @@ class _SearchPageState extends State<SearchPage> {
         forceWebView: false,
         headers: <String, String>{'my_header_key': 'my_header_value'},
       );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  Future<void> _makePhoneCall(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
     } else {
       throw 'Could not launch $url';
     }
@@ -39,6 +48,12 @@ class _SearchPageState extends State<SearchPage> {
                 _launched = _launchInBrowser(toLaunch);
               }),
               child: Text('url_launcher组件'),
+            ),
+            RaisedButton(
+              onPressed: () => setState(() {
+                _launched = _makePhoneCall('tel:$_phone');
+              }),
+              child: Text('拨打电话'),
             )
           ],
         ),
