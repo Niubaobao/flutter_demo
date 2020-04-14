@@ -8,7 +8,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  Future<void> _launched;
   String _phone = '17630228063';
 
   Future<void> _launchInBrowser(String url) async {
@@ -66,13 +65,13 @@ class _SearchPageState extends State<SearchPage> {
           children: <Widget>[
             RaisedButton(
               onPressed: () => setState(() {
-                _launched = _launchInBrowser(toLaunch);
+                _launchInBrowser(toLaunch);
               }),
               child: Text('url_launcher组件'),
             ),
             RaisedButton(
               onPressed: () => setState(() {
-                _launched = _makePhoneCall('tel:$_phone');
+                _makePhoneCall('tel:$_phone');
               }),
               child: Text('拨打电话'),
             ),
