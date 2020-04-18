@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './demo/list.dart';
 import './demo/drawer.dart';
 import './demo/bottom_bar.dart';
+import 'demo/lesson/Lesson1.dart';
 import 'demo/search.dart';
 
 // 入口文件
@@ -13,10 +14,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // 用Material设计模式去包裹
     return new MaterialApp(
-        title: 'Welcome to Flutter',
-        // Scaffold部分有页面顶部底部工具栏
-        home: Home(),
-        theme: ThemeData.light());
+      title: 'Welcome to Flutter',
+      // Scaffold部分有页面顶部底部工具栏
+      home: Home(),
+      theme: ThemeData.light(),
+      //注册路由表
+      routes: {
+        "lesson1": (context) => Lesson1(),
+      },
+    );
   }
 }
 
@@ -28,10 +34,6 @@ class Home extends StatelessWidget {
         child: new Scaffold(
           backgroundColor: Colors.grey[100],
           appBar: new AppBar(
-            // leading: IconButton(
-            //     icon: Icon(Icons.menu),
-            //     tooltip: 'Navigration',
-            //     onPressed: () => debugPrint('menu')),
             title: new Text(Strings.hello),
             actions: <Widget>[
               IconButton(

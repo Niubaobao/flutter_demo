@@ -75,7 +75,11 @@ class _SearchPageState extends State<SearchPage> {
               }),
               child: Text('拨打电话'),
             ),
-            listWidget(width)
+            listWidget(width),
+            RaisedButton(
+              onPressed: () => Navigator.pushNamed(context, 'lesson1'),
+              child: Text('基础语法测试'),
+            )
           ],
         ),
       ),
