@@ -54,6 +54,12 @@ class _Lesson1State extends State<Lesson1> with LessonText {
 
     // Import all names EXCEPT foo.
     // import 'package:lib2/lib2.dart' hide foo;
+
+    //通过实现类的 call() 方法， 能够让类像函数一样被调用
+    //eg:
+    var callClass = WannabeFunction();
+    var out = callClass("Hi", "there,", "gang");
+    print('$out');
   }
 
   @override
@@ -73,4 +79,8 @@ class _Lesson1State extends State<Lesson1> with LessonText {
       ),
     );
   }
+}
+
+class WannabeFunction {
+  call(String a, String b, String c) => '$a $b $c!';
 }
