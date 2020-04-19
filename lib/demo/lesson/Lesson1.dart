@@ -32,6 +32,28 @@ class _Lesson1State extends State<Lesson1> with LessonText {
     print(b);
     //调用mixin方法
     entertainMe();
+    // 优化
+    // 1
+    //指定库前缀
+    // 如果导入两个存在冲突标识符的库， 则可以为这两个库，或者其中一个指定前缀。 例如，如果 library1 和 library2 都有一个 Element 类， 那么可以通过下面的方式处理：
+    // import 'package:lib1/lib1.dart';
+    // import 'package:lib2/lib2.dart' as lib2;
+
+    // 使用 lib1 中的 Element。
+    // Element element1 = Element();
+
+    // 使用 lib2 中的 Element。
+    // lib2.Element element2 = lib2.Element();
+
+    //2
+    // 导入库的一部分
+    // 如果你只使用库的一部分功能，则可以选择需要导入的 内容。例如：
+
+    // Import only foo.
+    // import 'package:lib1/lib1.dart' show foo;
+
+    // Import all names EXCEPT foo.
+    // import 'package:lib2/lib2.dart' hide foo;
   }
 
   @override
