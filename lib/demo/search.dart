@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'lesson/allScren.dart';
+
 class SearchPage extends StatefulWidget {
   @override
   _SearchPageState createState() => _SearchPageState();
@@ -79,6 +81,13 @@ class _SearchPageState extends State<SearchPage> {
             RaisedButton(
               onPressed: () => Navigator.pushNamed(context, 'lesson1'),
               child: Text('基础语法测试'),
+            ),
+            RaisedButton(
+              onPressed: () => {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => AllScren()))
+              },
+              child: Text('全面屏屏幕适配'),
             )
           ],
         ),

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:demo/data/lesson.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -60,6 +62,15 @@ class _Lesson1State extends State<Lesson1> with LessonText {
     var callClass = WannabeFunction();
     var out = callClass("Hi", "there,", "gang");
     print('$out');
+    //最大值最小值
+    print('1和100中比较小的是:${min(1, 100)}');
+    print('1和100中比较大的数字是：${max(1, 100)}');
+    //随机数
+    /// Between 0 and 9.
+    print(Random().nextInt(10));
+
+    /// Between 0.0 and 1.0: [0, 1)
+    print(Random().nextDouble());
   }
 
   @override
